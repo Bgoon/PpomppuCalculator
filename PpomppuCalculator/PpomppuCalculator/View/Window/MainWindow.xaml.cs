@@ -93,14 +93,14 @@ namespace PpomppuCalculator.View.Window {
 				}
 			}
 
-			TotalAssetText.Text = totalAsset.ToString();
-			TotalHopeText.Text = totalHope.ToString();
+			TotalAssetText.Text = string.Format("{0:#,###}", totalAsset);
+			TotalHopeText.Text = string.Format("{0:#,###}", totalHope);
 
 			int balance = totalAsset - totalHope;
 			float usePercent = (float)Math.Round(totalHope * 100f / totalAsset, 1);
 			float balancePercent = (float)Math.Round(balance * 100f / totalAsset, 1);
 
-			BalanceText.Text = string.Format("{0:#,###}", balance.ToString());
+			BalanceText.Text = string.Format("{0:#,###}", balance);
 			ResultDescriptText.Text = string.Format("가진 돈의 {0}%를 소비하고,\n{1}%가 남습니다.", usePercent, balancePercent);
 			string result;
 			Color BGColor;

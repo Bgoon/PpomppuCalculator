@@ -28,3 +28,4 @@ X:\WorkDesk\A_Programing\Csharp\2019\20190109_PpomppuCalculator\PpomppuCalculato
 X:\WorkDesk\A_Programing\Csharp\2019\20190109_PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\obj\Release\PpomppuCalculator.csproj.CopyComplete
 X:\WorkDesk\A_Programing\Csharp\2019\20190109_PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\obj\Release\PpomppuCalculator.exe
 X:\WorkDesk\A_Programing\Csharp\2019\20190109_PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\obj\Release\PpomppuCalculator.pdb
+X:\WorkDesk\A_Programing\Csharp\2019\20190109_PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\PpomppuCalculator\obj\Release\PpomppuCalculator.csprojAssemblyReference.cache
