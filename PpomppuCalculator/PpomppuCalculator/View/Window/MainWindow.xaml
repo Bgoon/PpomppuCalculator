@@ -1,0 +1,100 @@
+﻿<Window x:Class="PpomppuCalculator.View.Window.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:PpomppuCalculator.View.Window"
+        xmlns:Root="clr-namespace:PpomppuCalculator"
+        xmlns:Converters ="clr-namespace:PpomppuCalculator.Converters"
+        xmlns:Component="clr-namespace:PpomppuCalculator.View.Component"
+        xmlns:Graphic="clr-namespace:PpomppuCalculator.View.Graphic"
+        mc:Ignorable="d"
+        Focusable="True"
+        Title="뽐뿌계산기" Width="450" Height="700"  
+        Icon="/PpomppuCalculator;component/Resources/Image/PpomppuCalculatorIcon.ico" MinWidth="400" ResizeMode="CanMinimize">
+    <ScrollViewer Name="RootContext" Focusable="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" VerticalAlignment="Top" Height="1920">
+        <ScrollViewer.Resources>
+            <System:Double x:Key="CategoryMargin">15</System:Double>
+            <System:Double x:Key="HeaderHeight">80</System:Double>
+        </ScrollViewer.Resources>
+        <StackPanel Background="#819199" VerticalAlignment="Top" Name="RootStackContext">
+            <!--가진돈-->
+            <StackPanel Background="#83a19c">
+                <Grid Height="{StaticResource HeaderHeight}">
+                    <TextBlock Text="가진돈" Margin="0,15,0,0" HorizontalAlignment="Center" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Bold" Foreground="#7E000000" FontSize="20" VerticalAlignment="Top"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,42,0,0">
+                        <TextBlock Name="TotalAssetText" Text="1,000" Foreground="#55FFFFFF" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Bold" FontSize="16" />
+                        <Graphic:Won Margin="5,0,0,3" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Name="AssetItemContext">
+                    <Component:CostItem x:Name="AssetItem"></Component:CostItem>
+                </StackPanel>
+                <Border Height="{StaticResource CategoryMargin}"></Border>
+            </StackPanel>
+            <!--사고싶은거-->
+            <StackPanel Background="#819199">
+                <Grid Height="{StaticResource HeaderHeight}">
+                    <TextBlock Text="사고싶은거" Margin="0,15,0,0" HorizontalAlignment="Center" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Bold" Foreground="#7E000000" FontSize="20" VerticalAlignment="Top"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,42,0,0">
+                        <TextBlock Name="TotalHopeText" Text="1,000" Foreground="#55FFFFFF" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Bold" FontSize="16" />
+                        <Graphic:Won Margin="5,0,0,3" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Grid>
+                <StackPanel>
+                    <StackPanel Name="HopeItemContext">
+                        <Component:CostItem></Component:CostItem>
+                        <Component:CostItem></Component:CostItem>
+                    </StackPanel>
+                    <Component:AddButton x:Name="HopeAddButton"></Component:AddButton>
+                </StackPanel>
+                <Border Height="{StaticResource CategoryMargin}"></Border>
+            </StackPanel>
+            <!--결산-->
+            <Grid Name="ResultContext" Background="#996767" ClipToBounds="True">
+                <Ellipse Name="ResultFX" Visibility="Hidden" Fill="#33FFFFFF" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+                <StackPanel>
+                    <Grid Name="CalculateSeparator" Height="40" Margin="0,-1,0,0" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1.2"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/PpomppuCalculator;component/Resources/Image/SeparatorPattern.png" Stretch="None" TileMode="Tile" Viewport="0,0,0.132,1"/>
+                        </Grid.Background>
+                    </Grid>
+                    <Grid Height="45">
+                        <TextBlock Text="결산" Margin="0,15,0,0" HorizontalAlignment="Center" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Bold" Foreground="#7E000000" FontSize="20" VerticalAlignment="Top"></TextBlock>
+                    </Grid>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="잔액" Margin="0,0,12,0" VerticalAlignment="Center" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Medium" Foreground="#4CFFFFFF" TextOptions.TextFormattingMode="Display" FontSize="14"></TextBlock>
+                            <TextBlock Name="BalanceText" Text="-1,900,000" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Bold" FontSize="24" Foreground="#7FFFFFFF"></TextBlock>
+                            <Graphic:Won VerticalAlignment="Bottom" Margin="5,0,0,4" RenderTransformOrigin="0.5,0.5">
+                                <Graphic:Won.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Graphic:Won.LayoutTransform>
+                            </Graphic:Won>
+                        </StackPanel>
+                        <Border Height="10"></Border>
+                        <TextBlock Name="ResultDescriptText" TextAlignment="Right" Text="가진 돈의 700%를 소비하고, &#10; -690%가 남습니다." FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Medium" HorizontalAlignment="Center" FontSize="14" Foreground="#66FFFFFF" TextOptions.TextFormattingMode="Display"/>
+                        <Border Height="30"></Border>
+                        <TextBlock Name="ResultText" Text="사지마" HorizontalAlignment="Center" FontFamily="/PpomppuCalculator;component/Resources/Font/#BM DoHyeon" TextOptions.TextFormattingMode="Display" FontSize="48" Foreground="#CCFFFFFF"></TextBlock>
+                        <Border Height="10"></Border>
+                    </StackPanel>
+                    <Border Height="{StaticResource CategoryMargin}"></Border>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

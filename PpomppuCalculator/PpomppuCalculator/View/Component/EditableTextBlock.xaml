@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="PpomppuCalculator.View.Component.EditableTextBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PpomppuCalculator.View.Component"
+             mc:Ignorable="d">
+    <!--<UserControl.Resources>
+        <HorizontalAlignment x:Key="TextHorizontalAlignment">Stretch</HorizontalAlignment>
+    </UserControl.Resources>-->
+    <Grid>
+        <TextBox Name="TextBox" Text="홂홂홂홂" Padding="5" HorizontalContentAlignment="{DynamicResource TextHorizontalAlignment}"
+                 Background="#FFF9F9F9" BorderBrush="{x:Null}" SelectionBrush="#FF535353" FontFamily="/PpomppuCalculator;component/Resources/Font/#KoPubDotum_Pro Medium" FontSize="16" TextOptions.TextHintingMode="Fixed"  VerticalContentAlignment="Stretch"/>
+    </Grid>
+</UserControl>

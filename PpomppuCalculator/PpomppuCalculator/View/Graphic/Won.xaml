@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="PpomppuCalculator.View.Graphic.Won"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PpomppuCalculator.View.Graphic"
+             mc:Ignorable="d" >
+    <Path Data="M13,4.9h-1.6l-1.2,5.4H8.1L6.9,4.9H6l-1.2,5.4H2.8L1.5,4.9H0V3.4l1.1,0L0.4,0h1.7l0.7,3.4h1.9L5.4,0h2l0.7,3.4
+		h1.9L10.8,0h1.8l-0.7,3.4l1.2,0V4.9z M3.2,4.9l0.6,2.7l0.6-2.7H3.2z M6.4,2.4l-0.2,1h0.4L6.4,2.4z M8.5,4.9l0.6,2.7l0.6-2.7H8.5z" Fill="#66FFFFFF" ></Path>
+</UserControl>
